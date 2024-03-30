@@ -1,0 +1,20 @@
+apiVersion: "kafka.strimzi.io/v1beta2"
+kind: "KafkaConnector"
+metadata:
+  name: "sql-source-connector"
+  labels:
+    strimzi.io/cluster: kafka-connect-cluster
+spec:
+  class: io.debezium.connector.sqlserver.SqlServerConnector
+  tasksMax: 1
+  config:
+    database.hostname: "kafka.database.windows.net"
+    database.port: "1433"
+    database.user: "kafka"
+    database.password: "SQLcdc@123"
+    database.names: "source1"
+    database.server.name: "kafka"
+    topic.prefix: "kafka"
+    database.history.kafka.bootstrap.servers: "my-cluster-kafka-bootstrap:9092"
+    database.history.kafka.topic: "schema-changes.inventory"
+    schema.history.internal: "io.debezium.relational.history.MemorySchemaHistory"
