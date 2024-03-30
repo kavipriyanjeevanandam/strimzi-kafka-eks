@@ -1,7 +1,7 @@
 apiVersion: "kafka.strimzi.io/v1beta2"
 kind: "KafkaConnector"
 metadata:
-  name: "sql-source-connector"
+  name: "my-sql-source-connector"
   labels:
     strimzi.io/cluster: kafka-connect-cluster
 spec:
