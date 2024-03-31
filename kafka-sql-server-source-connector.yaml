@@ -4,6 +4,8 @@ metadata:
   name: "sql-source-connector"
   labels:
     strimzi.io/cluster: kafka-connect-cluster
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   class: io.debezium.connector.sqlserver.SqlServerConnector
   tasksMax: 1

@@ -4,6 +4,7 @@ metadata:
   name: kafka-connect-cluster
   annotations:
     strimzi.io/use-connector-resources: "true"
+    argocd.argoproj.io/sync-wave: "1"
 
 spec:
   image: kavipriyanjeevanandam/source-sql-sink-s3
