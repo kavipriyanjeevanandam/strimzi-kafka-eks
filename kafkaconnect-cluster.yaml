@@ -23,9 +23,9 @@ spec:
     config.providers.file.class: org.apache.kafka.common.config.provider.FileConfigProvider
   externalConfiguration:
     volumes:
-      - name: mysql-config
+      - name: sql-config
         secret:
-          secretName: mysql-credentials
+          secretName: sql-credentials
       - name: aws-config
         secret:
           secretName: aws-credentials
