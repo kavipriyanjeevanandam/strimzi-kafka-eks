@@ -6,6 +6,12 @@ metadata:
     argocd.argoproj.io/sync-wave: "0"
 spec:
   kafka:
+    template:
+      persistentVolumeClaim:
+        metadata:
+          annotations:
+            argocd.argoproj.io/compare-options: IgnoreExtraneous
+            argocd.argoproj.io/sync-options: Prune=false
     version: 3.7.0
     replicas: 1
     listeners:
@@ -32,6 +38,12 @@ spec:
           size: 10Gi
           deleteClaim: false
   zookeeper:
+    template:
+      persistentVolumeClaim:
+        metadata:
+          annotations:
+            argocd.argoproj.io/compare-options: IgnoreExtraneous
+            argocd.argoproj.io/sync-options: Prune=false
     replicas: 1
     storage:
       type: persistent-claim
